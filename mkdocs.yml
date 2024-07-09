@@ -1,15 +1,28 @@
 site_name: SENTU.blog
+site_url: https://squidfunk.github.io/mkdocs-material/
+site_author: Luis Echenique
+site_description: >-
+  Write your documentation in Markdown and create a professional static site in
+  minutes – searchable, customizable, in 60+ languages, for all devices
+
+# Repository
+repo_name: SENTUstudio/web-blog
+repo_url: https://github.com/SENTUstudio/SENTUstudio.github.io
+
 theme:
   name: material
 
   favicon: img/favicon.png
   language: es
   icon:
-    logo: fontawesome/solid/hat-cowboy
+    logo: fontawesome/solid/feather
   features:
+    - content.code.annotation
     - content.code.annotate
     - content.code.copy
+    - content.code.select
     - content.tabs.link
+    - content.tooltips
     - header.autohide
     - announce.dismiss
     - navigation.footer
@@ -21,6 +34,7 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
+#    - toc.integrate
 
   plugins:
     - typeset
@@ -33,26 +47,64 @@ theme:
       accent: deep orange
       toggle:
         icon: material/weather-night
-        name: Switch to light mode
+        name: Cambia al light mode
 
     #Palette toggle for light mode
     - scheme: default
-      primary: green
+      primary: amber
       accent: deep orange
       toggle:
         icon: material/weather-sunny
-        name: Switch to dark mode
+        name: Cambia al dark mode
 
 markdown_extensions:
+  - abbr
   - admonition
-  - pymdownx.details
-  - pymdownx.superfences
   - attr_list
-#  - pymdownx.emoji:
-#    emoji_index: !!python/name:material.extensions.emoji.twemoji
-#    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - def_list
+  - footnotes
+  - md_in_html
   - toc:
-    permalink: true
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
 copyright: Copyright &copy; 2024 Luis Echenique
 # extra_css:
@@ -60,5 +112,9 @@ copyright: Copyright &copy; 2024 Luis Echenique
 extra:
   generator: false
   social:
-  - icon: fontawesome/brands/twitter
-    link: https://twitter.com/elepistemedev
+  - icon: fontawesome/brands/github
+    link: https://github.com/SENTUstudio
+  - icon: fontawesome/brands/x-twitter
+    link: https://x.com/squidfunk
+  - icon: fontawesome/brands/linkedin
+    link: https://www.linkedin.com/in/echeniqueluis/
