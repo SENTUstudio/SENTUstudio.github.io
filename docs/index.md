@@ -1,9 +1,9 @@
 ---
 template: home.html
-title: Material for MkDocs
+title: Ingeniería de Datos
 social:
   cards_layout_options:
-    title: Documentation that simply works
+    title: "Impulsa tu negocio con data-driven insights: Soluciones de ingeniería de datos para empresas"
 ---
 
-Welcome to Material for MkDocs.
+Bienvenidos a SENTU studio.
