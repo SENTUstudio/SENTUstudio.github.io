@@ -38,7 +38,15 @@ theme:
 
   plugins:
     - typeset
-    - search
+    - search:
+        separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+    - minify:
+        minify_html: true
+
+  # Hooks
+  hooks:
+    - material/overrides/hooks/shortcodes.py
+    - material/overrides/hooks/translations.py
 
   palette:
     # Palette toggle for dark mode
